@@ -1,12 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 using System.Threading;
 using Administratie_Programma;
 
+
 UserManager userManager = new UserManager();
-ClientManager clientManagement = new ClientManager();
+ClientManagement clientManagement = new ClientManagement();
+ClientInfo clientInfo = new ClientInfo();
 OrderManager orderManager = new OrderManager();
-InvoiceManager invoiceManager = new InvoiceManager();
+
 
 while (true)
 {
@@ -51,56 +54,35 @@ while (true)
     Console.WriteLine("1. Klanten beheren");
     Console.WriteLine("2. Klant info");
     Console.WriteLine("3. Bestellingen beheren");
-    Console.WriteLine("4. Facturen beheren");
-    Console.WriteLine("5. Afsluiten");
+    Console.WriteLine("4. Afsluiten");
     Console.Write("Keuze: ");
     string keuze = Console.ReadLine()?.ToLower();
     Console.Clear();
 
-    switch (keuze)
+    if (keuze == "1")
     {
-        case "1":
-            clientManagement.ManageClients();
-            break;
-        case "2":
-            clientManagement.ShowClientInfo();
-            break;
-        case "3":
-            orderManager.ManageOrders();
-            break;
-        case "4":
-            invoiceManager.ManageInvoices();
-            break;
-        case "5":
-            return;
-        default:
-            Console.WriteLine("Kies tussen 1, 2, 3, 4, 5");
-            break;
+        clientManagement.ManageClients();
     }
+    else if (keuze == "2")
+    {
+        ClientInfo.ClientInformatie();
+    }
+    else if (keuze == "3")
+    {
+        orderManager.ManageOrders();
+    }
+    else if (keuze == "4")
+    {
+        return;
+    }
+    else
+    {
+        Console.WriteLine("Kies tussen 1, 2, 3, 4, 5");
+    }
+}
+public static class ClientData
+{
+    public static List<Client> Clients { get; } = new List<Client>();
 }
 
-namespace Administratie_Programma
-{
-    internal class InvoiceManager
-    {
-        internal void ManageInvoices()
-        {
-            throw new NotImplementedException();
-        }
-    }
-}
 
-internal class ClientManager
-{
-    public string Name { get; set; }
-    public string Address { get; set; }
-    public string Phone { get; set; }
-    internal void ManageClients()
-    {
-        // Implementation here
-    }
-    internal void ShowClientInfo()
-    {
-        // Implementation here
-    }
-}

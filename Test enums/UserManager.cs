@@ -6,7 +6,7 @@ namespace Administratie_Programma
 {
     internal class UserManager
     {
-        private Dictionary<string, string> users = new Dictionary<string, string>();
+        public Dictionary<string, string> users = new Dictionary<string, string>();
 
         public void Register()
         {
@@ -18,7 +18,7 @@ namespace Administratie_Programma
             string password = Console.ReadLine();
             Console.Clear();
             Console.WriteLine("Registratie laadt...");
-            Thread.Sleep(1300);
+            Thread.Sleep(00);
 
             if (!users.ContainsKey(username))
             {
@@ -29,7 +29,7 @@ namespace Administratie_Programma
             {
                 Console.WriteLine("Gebruikersnaam bestaat al.");
             }
-            Thread.Sleep(900);
+            Thread.Sleep(00);
             Console.Clear();
         }
 
@@ -45,14 +45,14 @@ namespace Administratie_Programma
             if (users.ContainsKey(username) && users[username] == password)
             {
                 Console.WriteLine("Inloggen succesvol!");
-                Thread.Sleep(900);
+                Thread.Sleep(00);
                 Console.Clear();
                 return true;
             }
             else
             {
                 Console.WriteLine("Username/password incorrect");
-                Thread.Sleep(1300);
+                Thread.Sleep(000);
                 Console.Clear();
                 return false;
             }
