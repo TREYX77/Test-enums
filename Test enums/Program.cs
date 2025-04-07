@@ -53,7 +53,7 @@ while (true)
     Console.WriteLine("Wat wilt u doen?");
     Console.WriteLine("1. Klanten beheren");
     Console.WriteLine("2. Klant info");
-    Console.WriteLine("3. Bestellingen beheren");
+    Console.WriteLine("3. Bestellingen beheren (in Development)");
     Console.WriteLine("4. Afsluiten");
     Console.Write("Keuze: ");
     string keuze = Console.ReadLine()?.ToLower();

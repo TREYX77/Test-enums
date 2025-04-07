@@ -74,6 +74,9 @@ namespace Administratie_Programma
             {
                 Console.WriteLine(order);
             }
+            Console.WriteLine("Druk op een toets om terug te gaan...");
+            Console.ReadKey();
+            Console.Clear();    
         }
     }
 }
